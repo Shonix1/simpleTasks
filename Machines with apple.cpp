@@ -12,7 +12,14 @@ for(int i=1; ; i++) //не нужно было добавлять условие i<=amountBoxes, в остально
 {
     cout<<"Сколько ящиков погрузить в машину № "<<i<<": ";
     cin>>n;
-    amountBoxes-=n;
+    if (n>amountBoxes)
+    {
+         cout<<"Не допустимое число яблок для погрузки!"<<endl;
+         cout<<"На складе яблок: "<<amountBoxes<<endl;
+         i--;
+    }
+    else
+        amountBoxes-=n;
     if(amountBoxes<0)
         {
             cout<<"Вы не можете погрузить столько яблок"<<endl;
